@@ -1,0 +1,76 @@
+<resources>
+
+    <style name="EditTextLoginStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:fontFamily">@font/roboto_condensedregular</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="btnLoginStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/roboto_condensedregular</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:paddingStart">8dp</item>
+    </style>
+
+    <style name="btnStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:background">@color/mainFontReverse</item>
+        <item name="android:fontFamily">@font/roboto_condensedregular</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:paddingStart">8dp</item>
+    </style>
+
+    <style name="txtDashboardDesc">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:paddingStart">8dp</item>
+    </style>
+
+    <style name="txtDashboardCant">
+        <item name="android:textSize">50sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:paddingStart">8dp</item>
+    </style>
+
+    <style name="AppTheme.BlueAccent">
+        <item name="colorAccent">@color/base</item> <!-- Whatever color you want-->
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="ThemeOverlay.AppCompat.Dark">
+       <item name="android:windowBackground">@color/bkgdLight</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="colorAccent">@color/base</item>
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>

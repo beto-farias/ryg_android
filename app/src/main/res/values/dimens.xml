@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="icon_login_width">200dp</dimen>
+    <dimen name="icon_login_height">200dp</dimen>
+    <dimen name="login_text_height">80dp</dimen>
+    <dimen name="img_localidad">60dp</dimen>
+    <dimen name="filtros_header_height">70dp</dimen>
+    <dimen name="notification_height">200dp</dimen>
+    <dimen name="dimen_img_dashboard">70dp</dimen>
+</resources>

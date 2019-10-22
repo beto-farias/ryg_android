@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">OvHaul</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_recuperar_pwd">Recuperar contraseña</string>
+    <string name="usuario">Usuario</string>
+    <string name="pwd">Contraseña</string>
+    <string name="espere_un_momento">Espere un momento...</string>
+    <string name="usuario_error">Debe ingresar su nombre de usuario</string>
+    <string name="casos_en_audiencia">CASOS EN AUDIENCIA</string>
+    <string name="consignaciones_proximas">CONSIGNACIONES PRÓXIMAS</string>
+    <string name="localidades_registradas">LOCALIDADES REGISTRADAS</string>
+    <string name="mis_casos_en_audiencia">MIS CASOS EN AUDIENCIA</string>
+    <string name="mis_tareas_pendientes">MIS TAREAS PENDIENTES</string>
+    <string name="tareas_pendientes">TAREAS PENDIENTES</string>
+    <string name="pwd_error">Debe ingresar una contraseña válida</string>
+    <string name="responsable">Responsable</string>
+    <string name="fecha_asignacion">Fecha de asignación</string>
+    <string name="cms">CMS</string>
+    <string name="ultimo_estatus">Último estatus</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="ordenar">Ordenar</string>
+    <string name="buscar">Buscar</string>
+    <string name="Beneficiario">Beneficiario</string>
+    <string name="arrendador">Arrendador</string>
+    <string name="domicilio">Domicilio</string>
+    <string name="antecedentes">Antecedentes</string>
+    <string name="add_comentario">Escribe un comentario</string>
+    <string name="comentar">Comentar</string>
+    <string name="cargar_archivo">Cargar archivo</string>
+    <string name="descargar_archivo">Descargar archivo</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="loading">Espere un momento...</string>
+
+</resources>
