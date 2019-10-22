@@ -5,9 +5,13 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import mx.com.dgom.hm.ovhaul.app.AppConstantes;
 import mx.com.dgom.hm.ovhaul.app.AppController;
@@ -18,6 +22,9 @@ import mx.com.dgom.hm.ovhaul.to.LoginTO;
 import mx.com.dgom.hm.ovhaul.to.UserTO;
 
 public class LoginActivity extends App2GomActivity {
+
+    private static final String TAG = "LoginActivity";
+
     private EditText txtUsuario;
     private EditText txtPwd;
     private TextView txtVersion;
@@ -35,7 +42,7 @@ public class LoginActivity extends App2GomActivity {
         txtPwd = findViewById(R.id.txt_pwd);
         txtVersion = findViewById(R.id.txt_version);
 
-        txtUsuario.setText("mfkleinman@ryl.mx");
+        txtUsuario.setText("mfkleinman@rgl.mx");
         txtPwd.setText("12345678");
 
         setupVersionUI();
@@ -99,6 +106,12 @@ public class LoginActivity extends App2GomActivity {
 
                 AppData.usuario = user;
                 AppData.tokenSeguridad = to.getToken_seguridad();
+
+
+                //Suscribe a los topicos
+                manageSubscrition(user.getTxt_auth_item(), user.getId_master_cliente() + "");
+
+
                 Intent intent;
                 intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -107,6 +120,42 @@ public class LoginActivity extends App2GomActivity {
 
             }
         });
+    }
+
+
+    private void manageSubscrition(String rol, String masterCliente){
+
+        //Desuscribe del topico actual
+        String topicActual = AppConstantes.getFirebaseTopic(getApplicationContext());
+        if(topicActual != null){
+            FirebaseMessaging.getInstance().unsubscribeFromTopic(topicActual);
+        }
+
+        //Suscribe al topico nuevo
+        switch(rol){
+            case "abogado":
+            case "asistente":
+                String topic = "administracion-sitios";
+                AppConstantes.setFirebaseTopic(topic,getApplicationContext());
+                FirebaseMessaging.getInstance().subscribeToTopic( topic );
+                Log.d(TAG, "Suscrito al rol: " + topic);
+                AppConstantes.setFirebaseTopic(topic,getApplicationContext());
+            break;
+
+            case "cliente":
+            case "director-cliente":
+            case "usuario-cliente":
+            case "usuario-cliente-junior":
+                topic = "cliente-sitio-" + masterCliente ;
+                FirebaseMessaging.getInstance().subscribeToTopic( topic );
+                Log.d(TAG, "Suscrito al rol: " + rol);
+                AppConstantes.setFirebaseTopic(rol,getApplicationContext());
+            break;
+            default:
+                Log.d(TAG, "rol no enconrado");
+        }
+        //Proceso de registro para topicos
+
     }
 
 }

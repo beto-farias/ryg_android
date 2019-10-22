@@ -39,7 +39,7 @@ public class AppController {
             JSONObject data = new JSONObject();
             data.put("username",username );
             data.put("password", password);
-            data.put("token","askA2MWq9So:APA91bHY-OeaxYOBJ_rNNfsHGi3bNa_HiRDSG5DTITmp6vrSI4J0WSR68UQeb2lcqdaQUCuHKce0xCbxZnBcOJ0lhRVwBC4jPkd0Zpuf1MqGbSIrrem5wT1xe9MxlHAWLBdA8bNHYNPJ" );
+            data.put("token", AppConstantes.getFirebaseToken(ctx) );
 
             net.jsonObjectRequest(AppConstantes.API_REST_LOGIN, data, new NetworkResponseInterface() {
 

@@ -9,6 +9,27 @@ import mx.com.dgom.hm.ovhaul.to.UserTO;
 public  class AppConstantes {
 
         public  static UserTO USER;
+        private static final String FIREBASE_TOKEN = "FIREBASE_TOKEN";
+        private static final String FIREBASE_TOPIC = "FIREBASE_TOPIC";
+
+
+        public static  void setFirebaseTopic(String topic, Context ctx){
+            setPreference(FIREBASE_TOPIC,topic, ctx);
+        }
+
+        public static String getFirebaseTopic(Context ctx){
+            return getStringProperty(FIREBASE_TOPIC,ctx);
+        }
+
+        public static void setFirebaseToken(String token, Context ctx){
+            setPreference(FIREBASE_TOKEN,token, ctx);
+        }
+
+        public static String getFirebaseToken(Context ctx){
+            return getStringProperty(FIREBASE_TOKEN,ctx);
+        }
+
+
 
     //Version que utiliza QA o DEV
     public static  final api ambiente = api.DEV;
@@ -38,33 +59,6 @@ public  class AppConstantes {
         public static final String API_REST_TAREA_UPDATE_TEXTO              = getAPIURL() + "update-tarea-texto";
 
 
-
-        public static boolean getProperty(String name, Context ctx){
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
-            boolean res = preferences.getBoolean(name, false);
-            return res;
-        }
-
-        public static void setPreference(String name, boolean val, Context ctx){
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putBoolean(name, val);
-            editor.commit();
-        }
-
-        public static void setPreference(String name, String val, Context ctx){
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString(name, val);
-            editor.commit();
-        }
-
-        public static void setPreference(String name, int val, Context ctx){
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putInt(name, val);
-            editor.commit();
-        }
 
 
     //--------------
@@ -102,4 +96,43 @@ public  class AppConstantes {
                 return "dev";
         }
     }
+
+
+    //------------------------- FUNCIONES DE SERVICIO --------------------------
+
+    public static boolean getProperty(String name, Context ctx){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+        boolean res = preferences.getBoolean(name, false);
+        return res;
+    }
+
+    public static String getStringProperty(String name, Context ctx){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+        String res = preferences.getString(name, null);
+        return res;
+    }
+
+    public static void setPreference(String name, boolean val, Context ctx){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(name, val);
+        editor.commit();
+    }
+
+    public static void setPreference(String name, String val, Context ctx){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(name, val);
+        editor.commit();
+    }
+
+    public static void setPreference(String name, int val, Context ctx){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(name, val);
+        editor.commit();
+    }
+
+
+
 }
