@@ -42,8 +42,8 @@ public class LoginActivity extends App2GomActivity {
         txtPwd = findViewById(R.id.txt_pwd);
         txtVersion = findViewById(R.id.txt_version);
 
-        txtUsuario.setText("mfkleinman@rgl.mx");
-        txtPwd.setText("12345678");
+        //txtUsuario.setText("mfkleinman@rgl.mx");
+        //txtPwd.setText("12345678");
 
         setupVersionUI();
     }
